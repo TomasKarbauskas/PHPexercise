@@ -35,6 +35,78 @@
 //var_dump($n12);
 
 
+//$n = 1;
+//while ($n < 11) {
+//    echo $n;
+//    $n++;
+//};
+//do {
+//    echo $n;
+//    $n++;
+//} while ($n < 11);
+//for ($n = 1; $n < 11; $n++) {
+//    echo $n;
+//};
+//$n = [1,2,3,4,5,6,7,8,9,10];
+//foreach ($n as $toPrint) {
+//    echo $toPrint;
+//};
+
+//$n = 15;
+//while ($n > 2) {
+//    echo $n.PHP_EOL;
+//    $n--;
+//};
+
+//$n = 1;
+//while ($n < 21) {
+//    if (($n % 2) !== 0) {
+//        echo $n.PHP_EOL;
+//    };
+//    $n++;
+//};
+
+//$n = 1;
+//while ($n < 21) {
+//    if (($n % 3) === 0) {
+//        echo $n.PHP_EOL;
+//    };
+//    $n++;
+//};
+
+//$n = 1;
+//while ($n < 21) {
+//    if (($n % 3) === 0 || ($n % 5) === 0) {
+//        echo $n.PHP_EOL;
+//    };
+//    $n++;
+//};
+
+//$n = 1;
+//while ($n < 21) {
+//    if (($n % 3) === 0) {
+//        echo 'Hey ';
+//    } elseif (($n % 5) === 0) {
+//        echo 'Ho ';
+//    } elseif (($n % 3) === 0 && (($n % 5) === 0)) {
+//        echo 'HeyHo ';
+//    } else {
+//        echo $n.' ';
+//    }
+//    $n++;
+//};
+
+$sum = 0;
+for($i = 1; $i < 101; $i++) {
+    $sum += $i;
+}
+echo $sum;
+
+
+
+
+
+
 
 
 
