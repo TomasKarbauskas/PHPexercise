@@ -96,15 +96,31 @@
 //    $n++;
 //};
 
-$sum = 0;
-for($i = 1; $i < 101; $i++) {
-    $sum += $i;
+//$sum = 0;
+//for($i = 1; $i < 101; $i++) {
+//    $sum += $i;
+//}
+//echo $sum;
+
+//$days = [
+//    'monday',
+//    'tuesday',
+//    'wednesday',
+//    'thursday',
+//    'friday',
+//    'saturday',
+//    'sunday',
+//];
+//foreach ($days as $toPrint) {
+//    echo $toPrint.'-';
+//};
+
+$n = -5;
+while ($n < 6) {
+    echo $n.PHP_EOL;
+    var_dump ((bool)$n);
+    $n++;
 }
-echo $sum;
-
-
-
-
 
 
 
