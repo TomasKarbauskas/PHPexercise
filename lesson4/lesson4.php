@@ -25,13 +25,13 @@
 
 
 
-function stringModifier (string &$x, $modifier) {
-    $x = $modifier . $x . $modifier;
-    return $x;
-}
-$x = 'akvile';
-stringModifier($x, '##');
-echo $x;
+//function stringModifier (string &$x, string $modifier) {
+//    $x = $modifier . $x . $modifier;
+//    return $x;
+//}
+//$x = 'akvile';
+//stringModifier($x, '##');
+//echo $x;
 
 
 //function textReplicator (string $text, ?int $timesToReplicate) {
@@ -40,14 +40,17 @@ echo $x;
 //    } else {
 //        $result = '';
 //        for($i = 0; $i < $timesToReplicate; $i++) {
-//            $result .= $text;
+//            if (($timesToReplicate - 1) === $i) {
+//                $result .= $text;
+//            } else {
+//                $result .= $text . '-';
+//            }
 //        }
 //        return $result;
 //    }};
-//echo textReplicator('Ocean_adventure-', 4);
-//echo textReplicator('Ocean_adventure-', null);
-//or simple way:
-//echo str_repeat('Ocean_adventure-', 4);
+//echo textReplicator('Ocean_adventure', 4);
+//echo textReplicator('Ocean_adventure', null);
+
 
 
 //$anonymousFn = function (string $text, ?int $timesToReplicate) {
@@ -56,11 +59,15 @@ echo $x;
 //    } else {
 //        $result = '';
 //        for($i = 0; $i < $timesToReplicate; $i++) {
+//            if (($timesToReplicate - 1) === $i) {
 //            $result .= $text;
+//            } else {
+//                $result .= $text . '-';
+//            }
 //        }
 //        return $result;
 //    }};
-//echo $anonymousFn('Ocean_adventure-', 4);
-//echo $anonymousFn('Ocean_adventure-', null);
+//echo $anonymousFn('Ocean_adventure', 4);
+//echo $anonymousFn('Ocean_adventure', null);
 
 
