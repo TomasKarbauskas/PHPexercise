@@ -16,38 +16,48 @@
 //echo (arrayPrinter($array));
 
 
-//function stringEnhancer (string $word, $enhancer) {
+//function stringEnhancer (string $word, $enhancer = '**') {
 //    return $enhancer . $word . $enhancer;
 //}
 //echo stringEnhancer('Yellow submarine', '##');
+//echo stringEnhancer('Yellow submarine');
+
 
 
 //$x = 'akvile';
 //function stringModifier (string $x, $modifier) {
-//    return $modifier . $x . $modifier;
+//    echo $modifier . $x . $modifier;
 //}
 //echo stringModifier($x, '##');
 
 
-//function textReplicator (string $text, int $timesToReplicate) {
-//    $result = '';
-//    for($i = 0; $i < $timesToReplicate; $i++) {
-//        $result .= $text;
-//    }
-//    return $result;
-//}
+//function textReplicator (string $text, ?int $timesToReplicate) {
+//    if ($timesToReplicate === null) {
+//        return $text;
+//    } else {
+//        $result = '';
+//        for($i = 0; $i < $timesToReplicate; $i++) {
+//            $result .= $text;
+//        }
+//        return $result;
+//    }};
 //echo textReplicator('Ocean_adventure-', 4);
+//echo textReplicator('Ocean_adventure-', null);
 //or simple way:
 //echo str_repeat('Ocean_adventure-', 4);
 
 
-$anonymousFn = function (string $text, int $timesToReplicate) {
-    $result = '';
-    for($i = 0; $i < $timesToReplicate; $i++) {
-        $result .= $text;
-    }
-    return $result;
-};
+$anonymousFn = function (string $text, ?int $timesToReplicate) {
+    if ($timesToReplicate === null) {
+        return $text;
+    } else {
+        $result = '';
+        for($i = 0; $i < $timesToReplicate; $i++) {
+            $result .= $text;
+        }
+        return $result;
+    }};
 echo $anonymousFn('Ocean_adventure-', 4);
+echo $anonymousFn('Ocean_adventure-', null);
 
 
