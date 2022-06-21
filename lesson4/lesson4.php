@@ -1,7 +1,7 @@
 <?php
 
 //function dividesBy5 (int $numberToDivide): int {
-//    return $numberToDivide / 5;
+//    return $numberToDivide % 5;
 //};
 //echo (dividesBy5(15));
 
