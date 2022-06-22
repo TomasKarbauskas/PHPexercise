@@ -126,24 +126,132 @@
 // var_dump(exercise7());
 
 
- function exercise8(): array
+// function exercise8(): array
+//{
+//    /*
+//      Sunaikinkitę visas reikšmes, kurios dalijasi 2 ir grąžinkite masyvą
+//      Turėtumėte gauti masyvą: ['one' => 1, 'three' => 3, 'five' => 5]
+//                */
+//    $numbers = ['ninety' => 90, 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4, 'five' => 5];
+//
+//    foreach ($numbers as $key => $value) {
+//        if ($value % 2 === 0) {
+//            unset($numbers[$key]);
+//        }
+//    } return $numbers;
+//};
+//var_dump(exercise8());
+
+
+
+//function exercise9(int $start, int $end): void
+//{
+//    /*
+//    Išspausdinkite skaičius nuo $start iki $end pasinaudodami ciklu.
+//    Jeigu $start yra mažiau nei $end, funkcija nieko nespausdina.
+//    */
+//    if ($start > $end) {
+//        foreach (range($start, $end) as $number) {
+//            echo $number . ' ';
+//        }
+//    } else {
+//        echo '';
+//    }
+//};
+//exercise9(10, 5);
+
+
+//function exercise10(int $number): void
+//{
+//    /*
+//    Išspausdinkite skaičius, kurie yra mažesni nei $number ir dalijasi iš 3. Jeigu paduotas skaičius mažesnis nei 0,
+//    funkcija nieko nespausdina.
+//    Funkcijos kvietimas: exercise10(60)
+//    Funkcija spausdina:
+//    3
+//    6
+//    9
+//    12
+//    ...
+//    60
+//    */
+//
+//    $n = 1;
+//    if ($number < 0) {
+//        echo '';
+//    } else {
+//        while ($number >= $n) {
+//            if (($n % 3) === 0) {
+//                echo ($n.PHP_EOL);
+//            };
+//            $n++;
+//        };
+//    };
+//};
+//exercise10(60);
+
+
+//function exercise11(int $number): void
+//{
+//    /*
+//    Išspausdinkite skaičius nuo $number iki 0 pasinaudodami ciklu. Jeigu paduotas skaičius neigiamas,
+//    funkcija nieko nespausdina.
+//    Funkcijos kvietimas: exercise11(21)
+//    Funkcija spausdina:
+//    21
+//    20
+//    19
+//    ...
+//    1
+//    0
+//    */
+//
+//    if ($number < 0) {
+//        echo '';
+//    } else {
+//        while ($number >= 0) {
+//            echo ($number.PHP_EOL);
+//            $number--;
+//        };
+//    };
+//};
+//exercise11(-21);
+
+
+function getNumbers(): array
 {
-    /*
-      Sunaikinkitę visas reikšmes, kurios dalijasi 2 ir grąžinkite masyvą
-      Turėtumėte gauti masyvą: ['one' => 1, 'three' => 3, 'five' => 5]
-                */
-    $numbers = ['ninety' => 90, 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4, 'five' => 5];
+    return [
+        99,
+        15,
+        28,
+        13,
+        145,
+        99,
+        12,
+        -57,
+        -36,
+    ];
+}
 
-    foreach ($numbers as $key => $value) {
-        if ($value % 2 === 0) {
-            unset($numbers[$key]);
-        }
-    } return $numbers;
-};
-var_dump(exercise8());
+function exercise12(): int
+{
+    $numbers = getNumbers();
+    return array_sum($numbers);
+}
+var_dump(exercise12());
 
 
-
+function exercise13(): int
+{
+    $numbers = getNumbers();
+    function evenNumbers($numbers) {
+        return !($numbers & 1);
+    }
+    $evenNum = array_filter($numbers, 'evenNumbers');
+    $evenNum = array_values(array_filter($evenNum));
+    return array_sum($evenNum);
+}
+var_dump(exercise13());
 
 
 
