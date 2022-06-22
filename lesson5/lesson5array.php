@@ -112,39 +112,36 @@
 //        var_dump(exercise6());
 
 
-//            function exercise7(): array
-//            {
-//                /*
-//                Sunaikinkitę reikšmę 2 ir grąžinkite masyvą
-//                Turėtumėte gauti masyvą: ['zero' => 0, 'one' => 1, 'three' => 3, 'four' => 4]
-//                */
+//function exercise7(): array
+//{
+// /*
+//  Sunaikinkitę reikšmę 2 ir grąžinkite masyvą
+//  Turėtumėte gauti masyvą: ['zero' => 0, 'one' => 1, 'three' => 3, 'four' => 4]
+// */
 //
-//                $numbers = ['zero' => 0, 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4];
-//
-//                unset($numbers['two']);
-//
-//                return $numbers;
-//            }
-//            var_dump(exercise7());
+//    $numbers = ['zero' => 0, 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4];
+//    unset($numbers['two']);
+//    return $numbers;
+//}
+// var_dump(exercise7());
 
 
-
-            function exercise8(): array
-            {
-                /*
-                Sunaikinkitę visas reikšmes, kurios dalijasi 2 ir grąžinkite masyvą
-                Turėtumėte gauti masyvą: ['one' => 1, 'three' => 3, 'five' => 5]
+ function exercise8(): array
+{
+    /*
+      Sunaikinkitę visas reikšmes, kurios dalijasi 2 ir grąžinkite masyvą
+      Turėtumėte gauti masyvą: ['one' => 1, 'three' => 3, 'five' => 5]
                 */
+    $numbers = ['ninety' => 90, 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4, 'five' => 5];
 
-                $numbers = ['ninety' => 90, 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4, 'five' => 5];
+    foreach ($numbers as $key => $value) {
+        if ($value % 2 === 0) {
+            unset($numbers[$key]);
+        }
+    } return $numbers;
+};
+var_dump(exercise8());
 
-                foreach ($numbers as $x => $value) {
-                    if ($value % 2 === 0) {
-                        unset($numbers[$x]);
-                    } return $numbers;
-                }
-            };
-            var_dump(exercise8());
 
 
 
