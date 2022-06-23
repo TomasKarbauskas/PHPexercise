@@ -254,5 +254,44 @@ function exercise13(): int
 var_dump(exercise13());
 
 
+function exercise14(): int
+{
+    $numbers = getNumbers();
+    function sumOfPositiveNumbers($numbers) {
+        return ($numbers > 0);
+    }
+    $sumOfPositiveNumbers = array_filter($numbers, 'sumOfPositiveNumbers');
+    $sumOfPositiveNumbers = array_values(array_filter($sumOfPositiveNumbers));
+    return array_sum($sumOfPositiveNumbers);
+}
+var_dump(exercise14());
+
+
+function exercise15(): int
+{
+    $numbers = getNumbers();
+    function MultOfNumbersDivBy5($numbers) {
+        return (($numbers % 5) === 0);
+    }
+    $MultOfNumbersDivBy5 = array_filter($numbers, 'MultOfNumbersDivBy5');
+    $MultOfNumbersDivBy5 = array_values(array_filter($MultOfNumbersDivBy5));
+    return array_product($MultOfNumbersDivBy5);
+}
+var_dump(exercise15());
+
+
+function exercise16(): int
+{
+    $numbers = getNumbers();
+    $average = function ($numbers) {
+        $numbers = array_filter($numbers);
+    };
+    $average = array_sum($numbers) / count($numbers);
+    return $average;
+}
+var_dump(exercise16());
+
+
+
 
 
