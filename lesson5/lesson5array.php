@@ -283,13 +283,22 @@ var_dump(exercise15());
 function exercise16(): int
 {
     $numbers = getNumbers();
-    $average = function ($numbers) {
-        $numbers = array_filter($numbers);
-    };
+    $numbers = array_map('abs', $numbers);
     $average = array_sum($numbers) / count($numbers);
     return $average;
 }
 var_dump(exercise16());
+
+//exercise17
+    $numbers = getNumbers();
+    array_push($numbers, 255);
+    print_r($numbers);
+
+
+
+
+
+
 
 
 
