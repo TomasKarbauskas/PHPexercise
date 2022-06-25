@@ -270,12 +270,12 @@ var_dump(exercise14());
 function exercise15(): int
 {
     $numbers = getNumbers();
-    function MultOfNumbersDivBy5($numbers) {
+    function multOfNumbersDivBy5($numbers) {
         return (($numbers % 5) === 0);
     }
-    $MultOfNumbersDivBy5 = array_filter($numbers, 'MultOfNumbersDivBy5');
-    $MultOfNumbersDivBy5 = array_values(array_filter($MultOfNumbersDivBy5));
-    return array_product($MultOfNumbersDivBy5);
+    $multOfNumbersDivBy5 = array_filter($numbers, 'multOfNumbersDivBy5');
+    $multOfNumbersDivBy5 = array_values(array_filter($multOfNumbersDivBy5));
+    return array_product($multOfNumbersDivBy5);
 }
 var_dump(exercise15());
 
