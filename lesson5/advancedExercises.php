@@ -103,43 +103,42 @@
 //exercise4('product_2');
 
 
-function exercise5(): array
-{
-    $transactions = [
-        [
-            'count' => 2,
-            'price' => 13,
-        ],
-        [
-            'count' => 15,
-            'price' => 14,
-        ],
-    ];
-    /*
-    Kiekvienai iš transakcijų, esančių kintamajame $transactions, suskaičiuokite galutinę sumą ir pridėkite į
-    transakciją su raktu 'total'. Grąžinkite $transactions iš funkcijos.
-    Tikėkitės, kad transakciju skaičius gali išaugti. Jų gali būti ne 2, o 100. Dėl to naudokite ciklą.
-    Laukiamas rezultatas:
-    [
-        [
-            'count' => 2,
-            'price' => 13,
-            'total' => 26,
-        ],
-        ...
-    ];
-    */
-
-
-
-    foreach ($transactions as $transaction) {
-        $total = $transaction['count'] * $transaction['price'];
-        $transaction['total'] = $total;
-    }
-    return $transaction;
-}
-
-var_dump(exercise5());
+//function exercise5(): array
+//{
+//    $transactions = [
+//        [
+//            'count' => 2,
+//            'price' => 13,
+//        ],
+//        [
+//            'count' => 15,
+//            'price' => 14,
+//        ],
+//    ];
+//    /*
+//    Kiekvienai iš transakcijų, esančių kintamajame $transactions, suskaičiuokite galutinę sumą ir pridėkite į
+//    transakciją su raktu 'total'. Grąžinkite $transactions iš funkcijos.
+//    Tikėkitės, kad transakciju skaičius gali išaugti. Jų gali būti ne 2, o 100. Dėl to naudokite ciklą.
+//    Laukiamas rezultatas:
+//    [
+//        [
+//            'count' => 2,
+//            'price' => 13,
+//            'total' => 26,
+//        ],
+//        ...
+//    ];
+//    */
+//
+//
+//    foreach ($transactions as $key => $value) {
+//        $transactions[$key]['total']  = $value['count'] * $value['price'];
+//
+//    }
+//    return $transactions;
+//
+//}
+//var_dump(exercise5());
 
 
 
