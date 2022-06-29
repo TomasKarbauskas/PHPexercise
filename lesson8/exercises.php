@@ -46,7 +46,7 @@ function exercise3(string $orderDirection): array
     $numbers = [1, 15, 25, 13, 45, 551, 2, -3, -4];
 
     $positiveInt = array_filter($numbers, function($value){
-        return $value > 0;
+        return $value > -1;
     });
 
     if ($orderDirection === 'descending') {
