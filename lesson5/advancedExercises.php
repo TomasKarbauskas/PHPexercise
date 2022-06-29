@@ -141,4 +141,129 @@
 //var_dump(exercise5());
 
 
+//function exercise6(): array
+//{
+//    $currencyRates = [
+//        'usd' => 1.13,
+//        'gbp' => 0.83,
+//    ];
+//
+//    $transactions = [
+//        [
+//            'count' => 2,
+//            'price' => 3.55
+//        ],
+//        [
+//            'count' => 15,
+//            'price' => 14.1
+//        ],
+//    ];
+//    /*
+//    Kiekvienai iš transakcijų, esančių kintamajame $transactions, suskaičiuokite galutinę sumą visomis valiutomis
+//    esančiomis kintamajame $currencyRates (taip pat ir bazine valiuta - eur) ir pridėkite į transakciją su raktu 'totals'.
+//    Apvalinkite dviejų skaitmenų po kablelio tikslumu.
+//    Grąžinkite pamodifikuotą $transactions masyvą iš funkcijos.
+//    Tikėkitės, kad transakciju skaičius gali išaugti. Jų gali būti ne 2, o 100. Dėl to naudokite ciklą.
+//    Valiutų skaičius taip pat gali augti.
+//    Laukiamas rezultatas:
+//    [
+//        [
+//            'count' => 2,
+//            'price' => 3.55,
+//            'totals' => [
+//                'eur' => ...,
+//                'usd' => ...,
+//                'gbp' => ...,
+//            ],
+//        ],
+//        ...
+//    ];
+//    */
+//
+//    foreach ($transactions as $key => $value) {
+//        $transactions[$key]['total']['eur'] = number_format($value['count'] * $value['price'],2);
+//        $transactions[$key]['total']['usd'] = number_format($value['count'] * $value['price'] *
+//            $currencyRates['usd'],2);
+//        $transactions[$key]['total']['gbp'] = number_format($value['count'] * $value['price'] *
+//            $currencyRates['gbp'],2);
+//
+//    } return $transactions;
+//}
+//print_r(exercise6());
+
+
+
+//exercise7
+//$productCollection = [
+//    [
+//        'name' => 'Best sofa',
+//        'price' => 55,
+//    ]
+//];
+//
+//function exercise7(array $collection): array
+//{
+//    /*
+//    Funkcijai paduodama produktų kolekcija:
+//    $productCollection = [
+//        [
+//            'name' => 'Best sofa',
+//            'price' => '55,
+//        ],
+//        ...
+//    ];
+//    exercise7($productCollection);
+//    Funkcija turi grąžinti performuota kolekciją - 'name' turi tapti kolekcijos elemento raktu:
+//    [
+//        'Best sofa' => [
+//            'price' => '55,
+//        ],
+//        ...
+//    ]
+//    */
+//
+//    foreach ($collection as $key => $value){
+//        $collection['Best sofa']['price'] = $collection[$key]['price'];
+//        unset($collection[0]);
+//    }
+//    return $collection;
+//}
+//print_r(exercise7($productCollection));
+
+
+//function exercise8(): array
+//{
+//    $products = [
+//        'desk',
+//        'lamp',
+//        'sofa',
+//        'error',
+//    ];
+//
+//    /*
+//    Išskaidykite produktų pavadinimus į raides.
+//    [
+//        'desk' => [
+//            'd',
+//            'e',
+//            's',
+//            'k',
+//        ],
+//        ...
+//    ]
+//    */
+//
+//    foreach ($products as $value){
+//        $products[$value] = $value;
+//        $newArr = mb_str_split($value,1);
+//        $products[$value] = $newArr;
+//
+//        unset($products[0]);
+//        unset($products[1]);
+//        unset($products[2]);
+//        unset($products[3]);
+//    }
+//    return $products;
+//}
+//print_r(exercise8());
 
