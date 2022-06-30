@@ -49,6 +49,7 @@ function exercise3(string $orderDirection): array
         return $value > -1;
     });
 
+
     if ($orderDirection === 'descending') {
         rsort($positiveInt);
     } else if ($orderDirection === 'ascending'){
@@ -57,3 +58,24 @@ function exercise3(string $orderDirection): array
     return $positiveInt;
 }
 var_dump(exercise3('descending'));
+
+
+function exercise4(int $number): int
+{
+    /*
+    Prie kiekvieno masyvo nario pridėkite skaičių $number ir grąžinkite visų masyvo narių sumą.
+    Funkcijos kvietimas: exercise4(9)
+    Funkcija grąžina: 715
+    */
+
+    $numbers = [1, 15, 25, 13, 45, 551, 2];
+
+    foreach ($numbers as &$value){
+        $value = $value + $number;
+    };
+
+    $total = array_sum($numbers);
+
+    return $total;
+}
+print_r(exercise4(9));
