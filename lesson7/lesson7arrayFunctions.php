@@ -156,6 +156,7 @@ function exercise6(): int
         ],
     ];
 
+
     foreach ($orderItems as $key => $value) {
         if ($orderItems[$key]['name'] === $lowPriceItems[0] || $orderItems[$key]['name'] === $lowPriceItems[1]) {
             unset ($orderItems[$key]['priceRegular']);
