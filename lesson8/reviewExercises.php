@@ -164,3 +164,76 @@ $numbers = [1, 15, 25, 13, 45, 551, 2, -3, 0];
 //}
 //print_r(exercise6($numbers));
 
+
+
+//function exercise7($height, $width)
+//{
+//    /*
+//    Parašykite funkciją, kuri išspausdintų nurodytų matmenų bloką.
+//    Taip pat, pataisykite funkcijos parametrus ir return tipą.
+//    Funkcijos kvietimas: exercise7(3, 4)
+//    Funkcija grąžina: funkcija nieko negrąžina, ji tik spausdina:
+//    [][][][]
+//    [][][][]
+//    [][][][]
+//    */
+//
+//        if (is_integer($width) && is_integer($height)) {
+//            for ($column = 0; $column < $height; $column++) {
+//                for ($row = 0; $row < $width; $row++) {
+//                    echo '[]';
+//                }
+//                echo '' . PHP_EOL;
+//            }
+//        }
+//     return $width;
+//};
+//exercise7(3, 4);
+
+
+function exercise8(array $items, int $partsCount = 2): array
+{
+    /*
+    Išskaidykite masyvą į nurodytą kiekį dalių.
+    Patasykite šios funkcijos 'signature' (parametrus) taip, kad būtų galima ją kviesti nepaduodant
+    antrojo parametro $partsCount (2 pavyzdys) ir tokiu atveju masyvas būtų dalinamas į dvi dalis.
+    Funkcijos kvietimas:
+    exercise8(
+        [1, 2, 3, 4, 5, 6, 7],
+        4
+    )
+    Funkcija grąžina:
+    [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+        [7]
+    ]
+    Funkcijos kvietimas: exercise8([1, 2, 3, 4, 5, 6, 7])
+    Funkcija grąžina:
+    [
+        [1, 2, 3, 4],
+        [5, 6, 7],
+    ]
+    */
+
+
+    if ($partsCount !== 2) {
+// this part responsible for the use of provided and also of anny array given
+        if (count($items) % 2 === 0 && $partsCount % 2 !== 0) {
+            return array_chunk($items,count($items) / $partsCount + 1);
+        } else if ($partsCount % 2 === 0) {
+            return array_chunk($items, round(count($items) / $partsCount), PHP_ROUND_HALF_UP);
+        } else {
+            return array_chunk($items, round(count($items) / $partsCount + 1), PHP_ROUND_HALF_UP);
+        }
+
+// this part returns if no $partsCount provided
+    } else {
+        return array_chunk($items, number_format(count($items) / 2),0);
+    }
+
+}
+
+print_r(exercise8([1, 2, 3, 4, 5, 6, 7]));
+print_r(exercise8([1, 2, 3, 4, 5, 6, 7],4));
