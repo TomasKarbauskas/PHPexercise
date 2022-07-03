@@ -234,6 +234,5 @@ function exercise8(array $items, int $partsCount = 2): array
     }
 
 }
-
 print_r(exercise8([1, 2, 3, 4, 5, 6, 7]));
 print_r(exercise8([1, 2, 3, 4, 5, 6, 7],4));
