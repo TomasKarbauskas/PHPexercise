@@ -190,7 +190,7 @@
 //    $dateToCompare = $presentDate->diff($date);
 //    print_r($dateToCompare->format($dayFormat));
 //
-//    var_dump($presentDate);
+//
 //}
 //exercise8(date_create('2020-01-25 17:13:25'));
 //exercise8(date_create('2023-01-25 17:13:25'));
@@ -220,7 +220,7 @@
 //    $dateToCompare = $presentDate->diff($date);
 //    print_r($dateToCompare->format($dayFormat));
 //
-//    var_dump($dayFormat);
+//
 //}
 //exercise9(date_create('2020-01-25 17:13:25'));
 //exercise9(date_create('2023-01-25 17:13:25'));
