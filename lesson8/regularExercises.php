@@ -139,9 +139,6 @@ $someProducts = [
 //
 //    $balses = $a + $e + $i + $o + $u;
 //
-//    var_dump($u);
-//
-//
 //    return $balses;
 //}
 //print_r(exercise6());
