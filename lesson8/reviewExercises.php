@@ -57,7 +57,7 @@ $numbers = [1, 15, 25, 13, 45, 551, 2, -3, 0];
 //    }
 //    return $positiveInt;
 //}
-//var_dump(exercise3('descending'));
+//print_r(exercise3('descending'));
 //
 //
 //function exercise4(int $number): int
@@ -82,41 +82,57 @@ $numbers = [1, 15, 25, 13, 45, 551, 2, -3, 0];
 
 
 
-function exercise5(int $number): void
-{
-    /*
-    Išspausdinkite skaičius, kurie prasideda nuo $number ir mažėja arba didėja iki 0, per du skaitmenis.
-    Funkcijos kvietimas: exercise5(5)
-    Funkcija spausdina:
-    5
-    3
-    1
-    0
-    Funkcijos kvietimas: exercise5(-5)
-    Funkcija spausdina:
-    -5
-    -3
-    -1
-    0
-    */
-
-    if($number <= 0) {
-        while ($number <= 0) {
-            if (($number % 2) !== 0) {
-                echo $number.PHP_EOL;
-            };
-            $number++;
-        }
-    } else if ($number >= 0) {
-        while ($number >= 0) {
-            if (($number % 2) !== 0) {
-                echo $number.PHP_EOL;
-            };
-            $number--;
-        }
-    }
-}
-exercise5(5);
+//function exercise5(int $number): void
+//{
+//    /*
+//    Išspausdinkite skaičius, kurie prasideda nuo $number ir mažėja arba didėja iki 0, per du skaitmenis.
+//    Funkcijos kvietimas: exercise5(5)
+//    Funkcija spausdina:
+//    5
+//    3
+//    1
+//    0
+//    Funkcijos kvietimas: exercise5(-5)
+//    Funkcija spausdina:
+//    -5
+//    -3
+//    -1
+//    0
+//    */
+//
+//
+//    if($number <= 0 && $number % 2 !== 0) {
+//        while ($number <= 0) {
+//            if (($number % 2) !== 0) {
+//                echo $number.PHP_EOL;
+//            };
+//            $number++;
+//        }
+//    } else if ($number >= 0 && $number % 2 !== 0) {
+//        while ($number >= 0) {
+//            if (($number % 2) !== 0) {
+//                echo $number.PHP_EOL;
+//            };
+//            $number--;
+//        }
+//    }
+//    if($number <= 0) {
+//        while ($number <= 0) {
+//            if (($number % 2) === 0) {
+//                echo $number.PHP_EOL;
+//            };
+//            $number++;
+//        }
+//    } else if ($number >= 0) {
+//        while ($number >= 0) {
+//            if (($number % 2) === 0) {
+//                echo $number.PHP_EOL;
+//            };
+//            $number--;
+//        }
+//    }
+//}
+//exercise5(-6);
 
 
 
