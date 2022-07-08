@@ -96,21 +96,24 @@
 //exercise2(false);
 
 
-//    function exercise3(int $numberOfCycles): void
-//    {
-//        /*
-//        Išspausdinkite kiek laiko trunka prasukti tuščią ciklą nurodytą kiekį kartų ($numberOfCycles).
-//        Trukmę apvalinkite iki milisekundžių.
-//        Pridėkite parametrui $numberOfCycles numatytąją reikšmę 1000000.
-//        */
-//
-//        $i = 0;
-//        $start = hrtime(true);
-//
-//        while ($i < $numberOfCycles) {
-//            $i++;
-//        }
-//        echo (hrtime((true) - $start)/1000000).'ms';
-//
-//    }
-//    exercise3(1000000);
+    function exercise3(int $numberOfCycles): void
+    {
+        /*
+        Išspausdinkite kiek laiko trunka prasukti tuščią ciklą nurodytą kiekį kartų ($numberOfCycles).
+        Trukmę apvalinkite iki milisekundžių.
+        Pridėkite parametrui $numberOfCycles numatytąją reikšmę 1000000.
+        */
+
+        $i = 0;
+        $start = hrtime(true);
+
+        while ($i < $numberOfCycles) {
+            $i++;
+        }
+
+        $end = hrtime(true);
+
+        echo (($end - $start)/1000000).'ms';
+
+    }
+    exercise3(1000000);
