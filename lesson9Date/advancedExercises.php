@@ -104,9 +104,10 @@
         Pridėkite parametrui $numberOfCycles numatytąją reikšmę 1000000.
         */
 
-        $i = 0;
+
         $start = hrtime(true);
 
+        $i = 0;
         while ($i < $numberOfCycles) {
             $i++;
         }
