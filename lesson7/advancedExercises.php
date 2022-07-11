@@ -73,18 +73,6 @@ function getShoppingCart(): array
 //    Naudojama tik viena, didžiausia su krepšeliu susieta nuolaida ('cartDiscounts').
 //    */
 //
-//
-////    return [
-////        'products' => [
-////            'Comfy chair' => 'no data',
-////            'Yellow lamp' => ['price' => 15.3, 'quantity' => 2,],
-////            'Didzioji sofa' => ['pavadinimas' => 'Didzioji sofa', 'kaina' => 'trylika eurų'],
-////            'Softest rug' => ['price' => 27.3, 'quantity' => 3, 'discount' => 13,],
-////            'Blue shelf' => [],
-////        ],
-////        'cartDiscounts' => [5, 16, 15],
-////    ];
-//
 //    $products = getShoppingCart();
 //
 //    $product1 = array_column($products, 'Yellow lamp',);
