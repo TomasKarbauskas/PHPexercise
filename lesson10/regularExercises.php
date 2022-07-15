@@ -85,7 +85,6 @@
 //
 //    $output = explode(',',$string);
 //
-//
 //    return $output;
 //}
 //print_r(exercise3());
@@ -93,10 +92,10 @@
 
 //function exercise5(): void
 //{
-//    /*
-//    Įrašykite visą $vehicles masyvą į failą vehicles_database.json JSON formatu.
-//    */
-//
+    /*
+    Įrašykite visą $vehicles masyvą į failą vehicles_database.json JSON formatu.
+    */
+
 //    $vehicles = [
 //        [
 //            'type' => 'passenger car',
