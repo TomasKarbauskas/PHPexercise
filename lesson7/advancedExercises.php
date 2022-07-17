@@ -174,6 +174,5 @@ function getShoppingCart(): array
 */
 function array_map_custom(callable $callback, array $array): array
 {
-
     return [];
 }
