@@ -8,10 +8,6 @@ unset($jsonArray[$todoName]);
 
 file_put_contents('todo_database.json', json_encode($jsonArray, JSON_PRETTY_PRINT));
 
-echo 'delete success';
-
-print_r($jsonArray);
-
 header('Location: ' . $_SERVER["HTTP_REFERER"] );
 exit;
 

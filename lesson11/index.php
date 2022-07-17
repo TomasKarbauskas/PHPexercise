@@ -28,10 +28,8 @@
 
 <!--//exercise4-->
 <?php //$array = [];?>
-<?php //if(file_exists('lesson11/todo_database.json')):?>
-<?php //$toPrint = file_get_contents('lesson11/todo_database.json'); ?>
+<?php //$toPrint = file_get_contents('todo_database.json'); ?>
 <?php //$array = json_decode($toPrint, true); ?>
-<?php //endif;?>
 <!---->
 <!--<!doctype html>-->
 <!--<html>-->
@@ -63,10 +61,8 @@
 
 <!--//exercise5,6-->
 <?php $array = [];?>
-<?php if(file_exists('todo_database.json')):?>
 <?php $toPrint = file_get_contents('todo_database.json'); ?>
 <?php $array = json_decode($toPrint, true); ?>
-<?php endif;?>
 
 <!doctype html>
 <html>
@@ -87,7 +83,6 @@
 <fieldset style="width: 30rem; margin-top: 1rem" >
     <div>
         <?php foreach ($array as $todoName => $todo): ?>
-
             <div style="display: flex; justify-content: space-between">
                 <div style="margin-bottom: 0.5rem">
                     <?php echo $todoName ?>
