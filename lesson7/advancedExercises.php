@@ -101,3 +101,79 @@ function getShoppingCart(): array
 //}
 //print_r(exercise3());
 
+
+//function exercise4(array $newIpList): array
+//{
+//    $existingIpList = [
+//        '1.17.2.1',
+//        '15.1.2.1',
+//        '1.9.2.1',
+//        '1.1.98.1',
+//        '1.1.2.12',
+//        '1.11.2.1',
+//        '122.1.2.1',
+//        '1.31.2.1',
+//        '33.12.2.1',
+//    ];
+//
+//    /*
+//    Sukategorizuokite ip adresų sąrašą.
+//    ipsNew - ip iš $newIpList, kurių nėra $existingIpList
+//    ipsOld - ip iš $existingIpList, kurių nėra $newIpList
+//    ipsRemaining - ip, kurie egzistuoja abiejuose sąrašuose
+//    funkcija butu kviečiam taip:
+//    exercise4(
+//        ['15.1.2.1', '16.1.8.1', '15.1.8.1']
+//    );
+//    */
+//
+//    $result = [];
+//    $result['ipsNew'] = array_diff($newIpList, $existingIpList);
+//    $result['ipsOld'] = array_diff($existingIpList, $newIpList);
+//    $result['ipsRemaining'] = array_intersect($newIpList, $existingIpList);
+//
+//    return $result;
+//}
+//print_r(exercise4(['15.1.2.1', '16.1.8.1', '15.1.8.1']));
+
+
+//function exercise5(): string
+//{
+//    $words = [
+//        'over',
+//        'jumps',
+//        'fox',
+//        'Quick',
+//        'dog',
+//        'lazy',
+//        'very',
+//        'the',
+//    ];
+//
+//    /*
+//    "Išverskite" masyvą į kitą pusę ir paverskite į string tipo reikšmę.
+//    Arčiausiai vidurio esantys masyvo elementai turėtų atsirasti šonuose.
+//    Masyvo elementų skaičius galėtų dideti, bet jis visada bus lyginis.
+//    Rezultatas turėtų būti - 'Quick fox jumps over the very lazy dog'
+//    */
+//
+//
+//    $words = array_reverse($words);
+//    $chunkLength = count($words) / 2;
+//    $newArray = array_chunk($words, $chunkLength);
+//    $newArrayReverse = array_reverse($newArray);
+//    $arrayToString = implode(' ', $newArrayReverse[0]).' '.implode(' ', $newArrayReverse[1]);
+//    return $arrayToString;
+//}
+//print_r(exercise5());
+
+
+/*
+    exercise 6
+    Parašykite savo array_map funkcijos versiją nesinaudodami pačia array_map funkcija
+*/
+function array_map_custom(callable $callback, array $array): array
+{
+
+    return [];
+}
