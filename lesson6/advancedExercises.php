@@ -267,3 +267,165 @@
 //}
 //print_r(exercise8());
 
+
+//function exercise9(): void
+//{
+//    $animals = [
+//        [
+//            'type' => 'water',
+//            'name' => 'shark',
+//        ],
+//        [
+//            'type' => 'land',
+//            'name' => 'chimp',
+//        ],
+//        [
+//            'type' => 'water',
+//            'name' => 'hippo',
+//        ],
+//        [
+//            'type' => 'water',
+//            'name' => 'crocodile',
+//        ],
+//        [
+//            'type' => 'land',
+//            'name' => 'cat',
+//        ],
+//        [
+//            'type' => 'land',
+//            'name' => 'dog',
+//        ],
+//    ];
+//
+//    /*
+//    Išspausdinkite gyvūnus sugrupuotus pagal tipą.
+//    Rezultatas:
+//    land: chimp dog cat
+//    water: shark hippo crocodile
+//    */
+//
+//    $land = [];
+//    $water = [];
+//
+//    foreach ($animals as $key => $subKey){
+//        if ($subKey['type'] === 'land'){
+//            array_push($land, $subKey['name']);
+//            } else if ($subKey['type'] === 'water') {
+//                array_push($water, $subKey['name']);
+//        }
+//    }
+//
+//    echo 'land: '.implode(' ', $land).PHP_EOL;
+//    echo 'water: '.implode(' ', $water).PHP_EOL;
+//
+//}
+//exercise9();
+
+
+function getProducts(): array
+{
+    return [
+        'chair' => [
+            'type' => 'furniture',
+            'name' => 'Best chair',
+            'price' => 15,
+        ],
+        'lamp' => [
+            'type' => 'lighting',
+            'name' => 'Ultimate lamp',
+            'price' => 99,
+        ],
+        'sofa' => [
+            'type' => 'furniture',
+            'name' => 'Soft sofa',
+            'price' => 350
+        ],
+    ];
+}
+
+//function exercise10(): array
+//{
+//    $products = getProducts();
+//    /*
+//    Į masyvą $products pridėkite naują narį ir grąžinkite naujajį masyvą. Nario 'key' - 'fridge'. Nario reikšmė:
+//    [
+//        'type' => 'appliance',
+//        'name' => 'Coolest fridge',
+//        'price' => 200,
+//    ]
+//    */
+//
+//    $newMember = [
+//        'fridge' => [
+//            'type' => 'appliance',
+//            'name' => 'Coolest fridge',
+//            'price' => 200,
+//        ]
+//    ];
+//
+//    $newArray = array_merge_recursive($products, $newMember);
+//
+//    return $newArray;
+//}
+//print_r(exercise10());
+
+
+
+//function exercise11(): int
+//{
+//    $products = getProducts();
+//    /*
+//    Raskite ir grąžinkite visų produktų kainų vidurkį
+//    */
+//
+//    $arrayForCalc = [];
+//
+//    foreach ($products as $key => $value) {
+//        $arrayForCalc[] = $value['price'];
+//    }
+//    $average = array_sum($arrayForCalc) / count($products);
+//    return $average;
+//}
+//print_r(exercise11());
+
+
+//function exercise12(): array
+//{
+//    $products = getProducts();
+//    /*
+//    Sudėkite visų produktų pavadinimus į masyvą ir jį grąžinkite
+//    [
+//        'Best chair',
+//        'Ultimate lamp',
+//        'Soft sofa',
+//    ]
+//    */
+//
+//    $output = array_keys($products);
+//    return $output;
+//
+//}print_r(exercise12());
+
+
+//function exercise13(): void
+//{
+//    $products = getProducts();
+//    /*
+//    Iteruodami per masyvą išspausdinkite eilutę, kurioje matytusi produkto pavadinimas ir tipas atskirti brūkšneliu:
+//    Best chair - furniture, Ultimate lamp - lighting, Soft sofa - furniture
+//    */
+//
+//
+//    foreach ($products as $key => $value){
+//
+//        $name = $value['name'];
+//        $type = $value['type'];
+//        $output[] = $name.' - '.$type;
+//
+//    }
+//    echo implode(', ',$output);
+//}
+//exercise13();
+
+
+
