@@ -71,35 +71,55 @@
 //turėtų būti pakeisti i simbolius 'X'.
 //"John Smith, 1979 05 15" --> "John XXXXX, XXXX 05 15"
 
-function partial_hide_data (string $string): string
+//function partial_hide_data (string $string): string
+//{
+//    $array = explode(' ', $string);
+//    foreach ($array as $string) {
+//        if (strlen($string) > 4) {
+//            $subArray = str_split($string);
+//            foreach ($subArray as $letter) {
+//                if ($letter !== ',') {
+//                    $output = preg_replace('/^([a-zA-Z])$/', 'x', $subArray);
+//                    $backToString = implode('', $output);
+//                    $array[1] = $backToString;
+//                }
+//            }
+//        } else if (strlen($string) > 3) {
+//            $subArray = str_split($string);
+//            foreach ($subArray as $integer) {
+//                    $output = preg_replace('/^([0-9])$/', 'x', $subArray);
+//                    $backToString = implode('', $output);
+//                    $array[2] = $backToString;
+//            }
+//        }
+//    };
+//
+//    $output = implode(' ',$array);
+//
+//    return $output;
+//
+//}
+//print_r(partial_hide_data("John Smith, 1979 05 15"));
+
+
+//5. Parašykite funkciją, kuri pravaliduotų IPv4 adresą. IPv4 adresas yra sudarytas iš 4 skaičių, kurių kiekvienas gali
+//būti nuo 0 iki 255. Skaičiai atskirti taškais.
+//    Pvz.:
+//255.255.255.255
+//1.1.0.1
+
+function validate_IPv4 (string $ipv4): bool
 {
-    $array = explode(' ', $string);
-    foreach ($array as $string) {
-        if (strlen($string) > 4) {
-            $subArray = str_split($string);
-            foreach ($subArray as $letter) {
-                if ($letter !== ',') {
-                    $output = preg_replace('/^([a-zA-Z])$/', 'x', $subArray);
-                    $backToString = implode('', $output);
-                    $array[1] = $backToString;
-                }
-            }
-        } else if (strlen($string) > 3) {
-            $subArray = str_split($string);
-            foreach ($subArray as $integer) {
-                    $output = preg_replace('/^([0-9])$/', 'x', $subArray);
-                    $backToString = implode('', $output);
-                    $array[2] = $backToString;
-            }
-        }
-    };
-
-    $output = implode(' ',$array);
-
-    return $output;
-
+    $array = [];
+    preg_match(
+        '/\b(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]?)(\.|$)){4}\b/',
+        $ipv4, $array);
+    if(in_array($ipv4, $array)){
+        return true;
+    } else {
+        return false;
+    }
 }
-print_r(partial_hide_data("John Smith, 1979 05 15"));
-
+var_dump(validate_IPv4('1.1.0.1'));
 
 
