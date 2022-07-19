@@ -71,23 +71,35 @@
 //turėtų būti pakeisti i simbolius 'X'.
 //"John Smith, 1979 05 15" --> "John XXXXX, XXXX 05 15"
 
-//function hide_data (string $string)  incomplete
-//{
-//    $array = [];
-//    $array = explode(' ', $string);
-//    foreach ($array as $string) {
-//        if(!is_integer($string) && strlen($string) > 4) {
-//            $nX = strlen($string);
-//            $output = preg_replace('/^([a-z]{5})$/',$nX , $string);
-//        }
-//    }
-//    var_dump($output);
-////
-//
-//    return 0;
-//
-//}
-//print_r(hide_data("John Smith, 1979 05 15"));
+function partial_hide_data (string $string): string
+{
+    $array = explode(' ', $string);
+    foreach ($array as $string) {
+        if (strlen($string) > 4) {
+            $subArray = str_split($string);
+            foreach ($subArray as $letter) {
+                if ($letter !== ',') {
+                    $output = preg_replace('/^([a-zA-Z])$/', 'x', $subArray);
+                    $backToString = implode('', $output);
+                    $array[1] = $backToString;
+                }
+            }
+        } else if (strlen($string) > 3) {
+            $subArray = str_split($string);
+            foreach ($subArray as $integer) {
+                    $output = preg_replace('/^([0-9])$/', 'x', $subArray);
+                    $backToString = implode('', $output);
+                    $array[2] = $backToString;
+            }
+        }
+    };
+
+    $output = implode(' ',$array);
+
+    return $output;
+
+}
+print_r(partial_hide_data("John Smith, 1979 05 15"));
 
 
 
