@@ -27,7 +27,7 @@
 //function mobile_number_format(string $number): bool
 //{
 //    $array = [];
-//    preg_match('/^\+?[0-9]{3}?6[0-9]{7}$/',$number, $array);
+//    preg_match('/^\+[0-9]{3}?6[0-9]{7}$/',$number, $array);
 //    if(in_array($number, $array)){
 //        return true;
 //    } else {
@@ -36,7 +36,7 @@
 //
 //};
 //
-//var_dump(mobile_number_format($phone2));
+//var_dump(mobile_number_format($phone1));
 
 
 
