@@ -60,11 +60,11 @@
 //    $array = [];
 //    $newNumber = str_replace(' ', '', $number);
 //    $newNumber2 = str_replace('-','',$newNumber);
-//    preg_match('/^\+?[0-9]{3}?6[0-9]{7}|^[0-9]{13}$/',$newNumber2, $array);
+//    preg_match('/^\+[0-9]{3}?6[0-9]{7}|^[0-9]{13}$/',$newNumber2, $array);
 //    $output = implode($array);
 //    echo $output;
 //};
-//mobile_number_format($phone4);
+//mobile_number_format($phone1);
 
 
 //4. Parašykite funkciją, kuri užmaskuotų dalį vartotojo duomenų. Pavardės ir gimimo metų simboliai
@@ -108,18 +108,18 @@
 //255.255.255.255
 //1.1.0.1
 
-function validate_IPv4 (string $ipv4): bool
-{
-    $array = [];
-    preg_match(
-        '/\b(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]?)(\.|$)){4}\b/',
-        $ipv4, $array);
-    if(in_array($ipv4, $array)){
-        return true;
-    } else {
-        return false;
-    }
-}
-var_dump(validate_IPv4('1.1.0.1'));
+//function validate_IPv4 (string $ipv4): bool
+//{
+//    $array = [];
+//    preg_match(
+//        '/\b(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]?)(\.|$)){4}\b/',
+//        $ipv4, $array);
+//    if(in_array($ipv4, $array)){
+//        return true;
+//    } else {
+//        return false;
+//    }
+//}
+//var_dump(validate_IPv4('1.1.0.1'));
 
 
