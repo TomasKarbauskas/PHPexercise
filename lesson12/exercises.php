@@ -13,7 +13,6 @@
 
 
 
-
 //2. Parašykite funkciją, kuri patikrintų, ar tekstas atitinka lietuviško mobilaus telefono numerio formatą
 //"+37062345678" - true
 //"+37012345678" - false
@@ -67,6 +66,7 @@
 //mobile_number_format($phone1);
 
 
+
 //4. Parašykite funkciją, kuri užmaskuotų dalį vartotojo duomenų. Pavardės ir gimimo metų simboliai
 //turėtų būti pakeisti i simbolius 'X'.
 //"John Smith, 1979 05 15" --> "John XXXXX, XXXX 05 15"
@@ -100,6 +100,7 @@
 //
 //}
 //print_r(partial_hide_data("John Smith, 1979 05 15"));
+
 
 
 //5. Parašykite funkciją, kuri pravaliduotų IPv4 adresą. IPv4 adresas yra sudarytas iš 4 skaičių, kurių kiekvienas gali
