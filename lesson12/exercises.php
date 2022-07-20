@@ -78,13 +78,11 @@
 //        if (strlen($string) > 4) {
 //            $subArray = str_split($string);
 //            foreach ($subArray as $letter) {
-//                if ($letter !== ',') {
 //                    $output = preg_replace('/^([a-zA-Z])$/', 'x', $subArray);
 //                    $backToString = implode('', $output);
 //                    $array[1] = $backToString;
-//                }
 //            }
-//        } else if (strlen($string) > 3) {
+//        } if (strlen($string) > 3) {
 //            $subArray = str_split($string);
 //            foreach ($subArray as $integer) {
 //                    $output = preg_replace('/^([0-9])$/', 'x', $subArray);
@@ -97,7 +95,7 @@
 //    $output = implode(' ',$array);
 //
 //    return $output;
-//
+
 //}
 //print_r(partial_hide_data("John Smith, 1979 05 15"));
 
