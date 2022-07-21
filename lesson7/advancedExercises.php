@@ -172,7 +172,67 @@ function getShoppingCart(): array
     exercise 6
     Parašykite savo array_map funkcijos versiją nesinaudodami pačia array_map funkcija
 */
-function array_map_custom(callable $callback, array $array): array
-{
-    return [];
-}
+
+//$stringToUpper = function (string $value): string
+//{
+//    return strtoupper($value);
+//};
+//$people = ['anna','john','vida'];
+//
+//function array_map_custom(callable $callback, array $array): array
+//{
+//    $outputArray = [];
+//    foreach ($array as $value){
+//        $outputArray[] = $callback($value);
+//    }
+//    return $outputArray;
+//}
+//print_r(array_map_custom($stringToUpper, $people));
+
+
+
+/*
+    exercise 7
+    Parašykite savo array_filter funkcijos versiją nesinaudodami pačia array_filter funkcija
+*/
+
+//$numbers = [1,2,3,4,5,6,7,8,9,-11,-12];
+//$removeNegatives = function (int $value)
+//{
+//    if($value < 0){
+//        unset ($value);
+//    } return $value;
+//};
+//
+//function array_filter_custom(array $array, ?callable $callback): array
+//{
+//    $outputArray = [];
+//    foreach ($array as $value){
+//        $outputArray[] = $callback($value);
+//    }
+//    foreach ($outputArray as $key => $value){
+//        if($value === null){
+//            unset($outputArray[$key]);
+//        }
+//    }
+//    return $outputArray;
+//}
+//print_r(array_filter_custom($numbers, $removeNegatives));
+
+
+/*
+    exercise 8
+    Parašykite savo array_reduce funkcijos versiją nesinaudodami pačia array_reduce funkcija
+*/
+
+//$people = ['anna','john','vida'];
+//$arrayToString = function (array $array): string
+//{
+//    return implode(',',$array);
+//};
+//
+//function array_reduce_custom(array $array, callable $callback, $carry = ''): mixed
+//{
+//    return $callback($array);
+//}
+//print_r(array_reduce_custom($people, $arrayToString));
