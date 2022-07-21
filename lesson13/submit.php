@@ -10,7 +10,7 @@ $uploadedFileName = $_FILES['input_name']['name'];
 $uploadSize = $_FILES['input_name']['size'];
 $array = explode('.', $uploadedFileName);
 
-if ($uploadSize < 2000001){
+if ($uploadSize < 1000001){
     if(in_array('png', $array) || in_array('jpg', $array) || in_array('JPG', $array)) {
         $fileSavePath = './dataFiles/'. uniqid() . '_' . $uploadedFileName;
         $temporaryFilePath = $_FILES['input_name']['tmp_name'];
@@ -20,8 +20,10 @@ if ($uploadSize < 2000001){
         echo 'Error file format, jpg or png type only!';
     }
 } else {
-    echo 'File is too large, max size 2MB!';
+    echo 'File is too large, max size 1MB!';
 }
+
+
 
 
 

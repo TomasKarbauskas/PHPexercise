@@ -1,8 +1,10 @@
+
+
+
 <?php
+$information = new FilesystemIterator('./dataFiles');?>
 
-$iformation = new FilesystemIterator('./dataFiles');?>
-
-<?php foreach ($iformation as $entry): ?>
+<?php foreach ($information as $entry): ?>
     <div style="display: ; padding: 2rem">
         <div>
             <?php  $name = $entry->getFilename();
@@ -20,9 +22,18 @@ $iformation = new FilesystemIterator('./dataFiles');?>
         <div>
             <?php echo 'Date: '.date('Y-m-d H:i',$dateLastModified = $entry->getMTime()); ?>
         </div>
-        <button type="submit">Delete</button>
-    </div>
+        <div>
+                <form method="post" action="deleteFile.php">
+                    <input type="hidden" name="id" value="<?php echo $entry->getRealPath(); ?>">
+                    <button style="margin-left: 0.5rem">delete</button>
+                </form>
+                <form method="post" action="download.php">
+                    <input type="hidden" name="id" value="<?php echo $entry->getRealPath(); ?>">
+                    <button style="margin-left: 0.5rem">download</button>
+                </form>
+        </div>
 
+    </div>
 <?php endforeach;?>
 
 
