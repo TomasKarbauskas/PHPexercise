@@ -92,35 +92,45 @@ foreach ($inventory as $item => $value){
     }
 }
 
-//you bought:
 
+$overboughtArray = [];
 foreach ($arrayForEcho as $key => $val){
     if($val['purchased'] > $val['count']) {
-        echo 'Error!'.PHP_EOL.'We only have '.$val['count'].' '.$key.', you asked '.$val['purchased'].' '.$key.PHP_EOL;
-        exit;
+        $overboughtArray[$key] = $val;
     }
 }
 
-$toEcho = [];
+if(!empty($overboughtArray)){
 
-foreach ($arrayForEcho as $item => $value){
-    $toEcho[] = $value['purchased'].' '.$item;
+    echo 'Error!'.PHP_EOL;
+    foreach ($overboughtArray as $key => $val){
+        echo 'We only have '.$val['count'].' '.$key.', you asked '.$val['purchased'].PHP_EOL;
+    }
 
+} else {
+
+    $toEcho = [];
+
+    foreach ($arrayForEcho as $item => $value){
+        $toEcho[] = $value['purchased'].' '.$item;
+    }
+
+    echo 'You bought: '.implode(', ',$toEcho).PHP_EOL.'*****'.PHP_EOL;
+
+    foreach ($arrayForEcho as $item => $value){
+
+        $total = number_format($value['purchased'] * $value['price'],2);
+        $purchased = number_format($value['purchased'], 2);
+        $price = number_format($value['price'],2);
+        echo $item.PHP_EOL.$price.' * '.$purchased.' = '.$total.PHP_EOL.'*****'.PHP_EOL;
+
+        $totalArray[] = $total;
+        $sumToPay = array_sum($totalArray);
+    }
+    echo 'Total: '.$sumToPay;
 }
 
-echo 'You bought: '.implode(', ',$toEcho).PHP_EOL.'*****'.PHP_EOL;
 
-foreach ($arrayForEcho as $item => $value){
-
-    $total = number_format($value['purchased'] * $value['price'],2);
-    $purchased = number_format($value['purchased'], 2);
-    $price = number_format($value['price'],2);
-    echo $item.PHP_EOL.$price.' * '.$purchased.' = '.$total.PHP_EOL.'*****'.PHP_EOL;
-
-    $totalArray[] = $total;
-    $sumToPay = array_sum($totalArray);
-}
-echo 'Total: '.$sumToPay;
 
 
 
