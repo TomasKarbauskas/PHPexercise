@@ -94,15 +94,23 @@ foreach ($inventory as $item => $value){
 
 //you bought:
 
-foreach ($arrayForEcho as $item => $value){
-    $toEcho[] = $value['purchased'].' '.$item;
+foreach ($arrayForEcho as $key => $val){
+    if($val['purchased'] > $val['count']) {
+        echo 'Error!'.PHP_EOL.'We only have '.$val['count'].' '.$key.', you asked '.$val['purchased'].' '.$key.PHP_EOL;
+        exit;
+    }
 }
 
-echo 'You bought: '.implode(', ',$toEcho).PHP_EOL;
-echo '*****'.PHP_EOL;
+$toEcho = [];
 
 foreach ($arrayForEcho as $item => $value){
     $toEcho[] = $value['purchased'].' '.$item;
+
+}
+
+echo 'You bought: '.implode(', ',$toEcho).PHP_EOL.'*****'.PHP_EOL;
+
+foreach ($arrayForEcho as $item => $value){
 
     $total = number_format($value['purchased'] * $value['price'],2);
     $purchased = number_format($value['purchased'], 2);
@@ -113,6 +121,16 @@ foreach ($arrayForEcho as $item => $value){
     $sumToPay = array_sum($totalArray);
 }
 echo 'Total: '.$sumToPay;
+
+
+
+
+
+
+
+
+
+
 
 
 
