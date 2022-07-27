@@ -50,6 +50,20 @@ $inventory = [
 
 $cartArray = explode(' ', implode(' ', $argv));
 
+if(in_array('get_total', $argv)){
+    $totalCount = array_reduce($inventory,
+        function (float $n, array $count){
+            return $n + $count['count'];
+        },0);
+
+    $totalCost = array_reduce($inventory,
+        function (float $n, array $price){
+            return $n + $price['count'] * $price['price'];
+        },0);
+    echo 'Total count: '.$totalCount.PHP_EOL.'Total cost: '.$totalCost.PHP_EOL;
+    exit;
+}
+
 $newCart = [];
 foreach ($cartArray as $key => $value) {
     if(preg_match('/[:]/',$value)){
