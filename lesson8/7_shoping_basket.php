@@ -97,17 +97,27 @@ $categories = [
 
 $categoriesModified1 = [];
 foreach ($categories as $key => $value){
-    foreach ($value as $subKey => $subValue)
-    $categoriesModified1[] = $subValue;
+    foreach ($value as $subKey => $subValue){
+        $categoriesModified1[] = $subValue;
+    }
 }
 
 $categoriesModified2 = [];
+$totalCategoryItem = [];
 foreach ($categoriesModified1 as $key => $value){
     if (is_array($value)){
-        foreach ($value as $subKey => $subValue)
+        foreach ($value as $subKey => $subValue){
             $categoriesModified2[$subKey] = $subValue;
+            foreach ($subValue as $subKey2 => $subValue2){
+                if($subKey2 === 'type'){
+                    $totalCategoryItem = $value;
+                }
+            }
+        }
     }
 }
+
+$forTotalOutputByCategory = array_merge_recursive($totalCategoryItem, $categories);
 
 $forExotics = [];
 foreach ($categoriesModified2 as $key => $value){
@@ -122,6 +132,34 @@ foreach ($categoriesModified2 as $key => $value){
 $categoriesModFinal = array_merge_recursive($forExotics, $categoriesModified2);
 
 $cartArray = explode(' ', implode(' ', $argv));
+
+
+$totalCalculations = [];
+foreach ($cartArray as $key => $value) {
+    foreach ($forTotalOutputByCategory as $item => $values){
+        if($value === $item) {
+            $totalCalculations[$item] = $values;
+        }
+    }
+}
+$arrayCount = [];
+$arrayCost = [];
+if(!empty($totalCalculations)){
+    foreach ($totalCalculations as $key => $value){
+        foreach ($value as $subKey => $subValue){
+            foreach ($subValue as $subKey2 => $subValue2){
+                $arrayCount[] = $subValue2['count'];
+                $cost = $subValue2['price'] * $subValue2['count'];
+                $arrayCost[] = $cost;
+            }
+        }
+    }
+    $totalCount = array_sum($arrayCount);
+    $totalCost = array_sum($arrayCost);
+    echo 'Total count: '.$totalCount.PHP_EOL.'Total cost: '.$totalCost.PHP_EOL;
+
+    exit;
+}
 
 if(in_array('get_total', $argv)){
     $totalCount = array_reduce($categoriesModFinal,
@@ -216,11 +254,6 @@ if(!empty($overboughtArray)){
     }
     echo 'Total: '.$sumToPay;
 }
-
-
-
-
-
 
 
 
