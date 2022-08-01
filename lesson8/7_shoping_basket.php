@@ -1,63 +1,5 @@
 <?php
 
-$inventory = [
-    'apple' => [
-        'count' => 5,
-        'price' => 0.15,
-    ],
-    'carrot' => [
-        'count' => 100,
-        'price' => 0.01,
-    ],
-    'fish' => [
-        'count' => 15,
-        'price' => 5.5,
-    ],
-    'beer_bottle' => [
-        'count' => 22,
-        'price' => 1.3,
-    ],
-    'cheese' => [
-        'count' => 1,
-        'price' => 4.5,
-    ],
-    'wine_bottle' => [
-        'count' => 4,
-        'price' => 8,
-    ],
-    'bread' => [
-        'count' => 11,
-        'price' => 2.1,
-    ],
-];
-
-
-//if there was a mistake with expected input in part 1.4:
-//get_total was put in 1_1_shoping_basket.php and also in 7_shoping_basket.php
-
-//1.4 Improve your progam to print the total cost of all items in your store
-//Expected input: php -f 7_shoping_basket.php get_total
-//Expected output:
-//Total count: 158
-//Total cost: 172.45
-
-//To work with inventory array
-
-//if(in_array('get_total', $argv)){
-//    $totalCount = array_reduce($inventory,
-//    function (float $n, array $count){
-//        return $n + $count['count'];
-//    },0);
-//
-//    $totalCost = array_reduce($inventory,
-//    function (float $n, array $price){
-//        return $n + $price['count'] * $price['price'];
-//    },0);
-//    echo 'Total count: '.$totalCount.PHP_EOL.'Total cost: '.$totalCost.PHP_EOL;
-//}
-
-
-
 //1.5 Write a new command that is capable to work with nested warehouse array, named $categories.
 //It should be able to find the ordered item within 'items' array of a category.
 //It should print all the output, that commands 1.1 - 1.4 are able to print.
@@ -142,15 +84,18 @@ foreach ($cartArray as $key => $value) {
         }
     }
 }
+
 $arrayCount = [];
 $arrayCost = [];
-if(!empty($totalCalculations)){
+if(!empty($totalCalculations) && in_array('total', $cartArray) && in_array('category', $cartArray)){
     foreach ($totalCalculations as $key => $value){
         foreach ($value as $subKey => $subValue){
-            foreach ($subValue as $subKey2 => $subValue2){
-                $arrayCount[] = $subValue2['count'];
-                $cost = $subValue2['price'] * $subValue2['count'];
-                $arrayCost[] = $cost;
+            if(is_array($subValue)){
+                foreach ($subValue as $subKey2 => $subValue2){
+                    $arrayCount[] = $subValue2['count'];
+                    $cost = $subValue2['price'] * $subValue2['count'];
+                    $arrayCost[] = $cost;
+                }
             }
         }
     }
