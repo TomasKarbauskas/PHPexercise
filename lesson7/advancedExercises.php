@@ -41,11 +41,16 @@ function getShoppingCart(): array
 //    */
 //
 //    $products = getShoppingCart();
-//    $total = 0;
+//    $arrayTotal = [];
 //
-//    $product1 = array_column($products, 'Yellow lamp',);
-//    $product2 = array_column($products, 'Softest rug');
-//    $arrayTotal = array_merge($product1, $product2);
+//    foreach ($products as $key => $value){
+//        foreach ($value as $subKey => $subValue){
+//            if(is_array($subValue) && array_key_exists('price', $subValue)
+//                && array_key_exists('quantity', $subValue)){
+//                        $arrayTotal[] = $subValue;
+//            }
+//        }
+//    }
 //
 //    $total = array_reduce($arrayTotal,
 //        function (float $a, array $price){
@@ -54,7 +59,7 @@ function getShoppingCart(): array
 //        }, 0);
 //
 //    return $total;
-
+//
 //}
 //print_r(exercise2());
 
@@ -75,18 +80,26 @@ function getShoppingCart(): array
 //
 //    $products = getShoppingCart();
 //
-//    $product1 = array_column($products, 'Yellow lamp',);
-//    $product2 = array_column($products, 'Softest rug');
-//    $arrayTotal = array_merge($product1, $product2);
+//    $arrayTotal = [];
+//
+//    foreach ($products as $key => $value){
+//        foreach ($value as $subKey => $subValue){
+//            if(is_array($subValue) && array_key_exists('price', $subValue)
+//                && array_key_exists('quantity', $subValue)){
+//                        $arrayTotal[] = $subValue;
+//            }
+//        }
+//    }
 //
 //
 //    $cartDiscounts = array_values($products['cartDiscounts']);
 //    $discountForCart = max($cartDiscounts);
 //
-//
 //    $totalBeforeCartDiscount = array_reduce($arrayTotal,
 //        function (float $a, array $price){
-//
+//        if(!array_key_exists('discount', $price)){
+//            $price['discount'] = 0;
+//        }
 //            $price['price'] = $price['price'] - ($price['price'] / 100 * $price['discount']);
 //            $productTotal = $price['price'] * $price['quantity'];
 //
